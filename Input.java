@@ -1,93 +1,129 @@
 import java.util.Scanner;
+
 public class Input {
 
     public static void main(String[] args) {
 
-        int day = 0;
+        String day = 0;
         Scanner scanner = new Scanner(System.in);
 
-
-        while (day != -1) {
-            try {
-                System.out.println("Enter a number\n");
-                day = scanner.nextInt();
-                          
-            }  catch (Exception e) {
-                System.out.println("That is not a valid integer");
-                break;               
-            }
-
-            switch (day) {
-                case 0:
-                    System.out.println("Today is Monday\n");
-                    break;
-                case 1:
-                    System.out.println("Today is Tuesday\n");
-                    break;
-                case 2:
-                    System.out.println("Today is Wednesday\n");
-                    break;
-                case 3:
-                    System.out.println("Today is Thursday\n");
-                    break;
-                case 4:
-                    System.out.println("Today is Friday\n");
-                    break;
-                case 5:
-                    System.out.println("Today is Saturday\n");
-                    break;
-                case 6:
-                    System.out.println("Today is Sunday\n");
-                    break;
-                default:
-                    System.out.println("Invalid\n");
-                    break;
-            }
+        System.out.println("Would you like to go left, right or straight?\n");
+        day = scanner.nextln();
 
 
-        }
-            scanner.close();
-
-        char ch = 'a';
-
-        while (ch != 'z') {
-            
-            try {
-                System.out.println("Enter a word\n");
-                day = scanner.next().charAt(2);
-                
-                switch (ch) {
-                    case 'a':
-                        System.out.println("");
-                        break;
-                
-                    default:
-                        break;
-                }
-                
-            } catch (Exception e) {
-                System.out.println("That is not a valid word");
+        switch(day.toLowerCase()) {
+            case 'left':
+                left();
                 break;
-            }
-
+            case 'right':
+                right();
+                break;
+            case 'straight':
+                straight();
+                break;
+            default:
+                System.out.println("Those are not one of the options");
+                break;
         }
-            scanner.close();
+
+        scanner.close();
         
     }
 
-    public static void firstChoice(){
+    public static void left(){
+        System.out.println("You go left, would you like to open the door?");
+        day = scanner.nextln();
 
+        switch (day.toLowerCase()) {
+            case 'yes':
+                leftDoor();
+                break;
+            case 'no':
+                System.out.println("You end your adventure here\n");
+                break;
+        }
+
+        scanner.close();
     }
 
-    public static void secondChoice(){
+    public static void right(){
+        System.out.println("You go right, would you like to go into the forest?");
+        day = scanner.nextln();
 
+        switch (day.toLowerCase()) {
+            case 'yes':
+                rightForest();
+                break;
+            case 'no':
+                System.out.println("You end your adventure here\n");
+                break;
+        }
 
+        scanner.close();
     }
 
-    public static void thirdChoice(){
-        
+    public static void straight(){
+        System.out.println("You go straight, would you like to jump or fly over the ditch?");
+        day = scanner.nextln();
+
+        switch (day.toLowerCase()) {
+            case 'fly':
+                straight();
+                break;
+            case 'jump':
+                System.out.println("You fall and you end your adventure here\n");
+                break;
+        }
+
+        scanner.close();
     }
-    
+
+    public static void leftDoor(){
+        System.out.println("You opened the door, would you like to go in?");
+        day = scanner.nextln();
+
+        switch (day.toLowerCase()) {
+            case 'yes':
+                System.out.println("You went inside and you saw a light");
+                break;
+            case 'no':
+                System.out.println("You end your adventure here\n");
+                break;
+        }
+
+        scanner.close();
+    }
+
+    public static void rightForest(){
+        System.out.println("You went into the forest, do you want to explore or go back?");
+        day = scanner.nextln();
+
+        switch (day.toLowerCase()) {
+            case 'explore':
+                System.out.println("You went into the forest");
+                break;
+            case 'go back':
+                System.out.println("You end your adventure here\n");
+                break;
+        }
+
+        scanner.close();
+    }
+
+    public static void straightDitch(){
+        System.out.println("You fly over the ditch, do you continue or go back?");
+        day = scanner.nextln();
+
+        switch (day.toLowerCase()) {
+            case 'continue':
+                System.out.println("You went inside and you saw a light");
+                break;
+            case 'go back':
+                System.out.println("You end your adventure here\n");
+        }
+
+        scanner.close();
+    }
 
 
     
