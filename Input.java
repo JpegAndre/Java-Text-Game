@@ -74,5 +74,21 @@ public class Input {
             scanner.close();
         
     }
+
+    public static void firstChoice(){
+
+    }
+
+    public static void secondChoice(){
+
+
+    }
+
+    public static void thirdChoice(){
+        
+    }
+    
+
+
     
 }
