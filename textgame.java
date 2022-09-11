@@ -1,24 +1,24 @@
 import java.util.Scanner;
 
-public class Input {
+public class textgame {
 
     public static void main(String[] args) {
 
-        String day = 0;
+        String choice = "";
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Would you like to go left, right or straight?\n");
-        day = scanner.nextln();
+        choice = scanner.nextLine();
+        scanner.close();
 
-
-        switch(day.toLowerCase()) {
-            case 'left':
+        switch (choice.toLowerCase()) {
+            case "left":
                 left();
                 break;
-            case 'right':
+            case "right":
                 right();
                 break;
-            case 'straight':
+            case "straight":
                 straight();
                 break;
             default:
@@ -26,19 +26,19 @@ public class Input {
                 break;
         }
 
-        scanner.close();
-        
     }
 
-    public static void left(){
+    public static void left() {
+        String choice = "";
+        Scanner scanner = new Scanner(System.in);
         System.out.println("You go left, would you like to open the door?");
-        day = scanner.nextln();
+        choice = scanner.nextLine();
 
-        switch (day.toLowerCase()) {
-            case 'yes':
+        switch (choice.toLowerCase()) {
+            case "yes":
                 leftDoor();
                 break;
-            case 'no':
+            case "no":
                 System.out.println("You end your adventure here\n");
                 break;
         }
@@ -46,15 +46,17 @@ public class Input {
         scanner.close();
     }
 
-    public static void right(){
+    public static void right() {
+        String choice = "";
+        Scanner scanner = new Scanner(System.in);
         System.out.println("You go right, would you like to go into the forest?");
-        day = scanner.nextln();
+        choice = scanner.nextLine();
 
-        switch (day.toLowerCase()) {
-            case 'yes':
+        switch (choice.toLowerCase()) {
+            case "yes":
                 rightForest();
                 break;
-            case 'no':
+            case "no":
                 System.out.println("You end your adventure here\n");
                 break;
         }
@@ -62,15 +64,17 @@ public class Input {
         scanner.close();
     }
 
-    public static void straight(){
+    public static void straight() {
+        String choice = "";
+        Scanner scanner = new Scanner(System.in);
         System.out.println("You go straight, would you like to jump or fly over the ditch?");
-        day = scanner.nextln();
+        choice = scanner.nextLine();
 
-        switch (day.toLowerCase()) {
-            case 'fly':
+        switch (choice.toLowerCase()) {
+            case "fly":
                 straight();
                 break;
-            case 'jump':
+            case "jump":
                 System.out.println("You fall and you end your adventure here\n");
                 break;
         }
@@ -78,15 +82,17 @@ public class Input {
         scanner.close();
     }
 
-    public static void leftDoor(){
+    public static void leftDoor() {
+        String choice = "";
+        Scanner scanner = new Scanner(System.in);
         System.out.println("You opened the door, would you like to go in?");
-        day = scanner.nextln();
+        choice = scanner.nextLine();
 
-        switch (day.toLowerCase()) {
-            case 'yes':
+        switch (choice.toLowerCase()) {
+            case "yes":
                 System.out.println("You went inside and you saw a light");
                 break;
-            case 'no':
+            case "no":
                 System.out.println("You end your adventure here\n");
                 break;
         }
@@ -94,15 +100,17 @@ public class Input {
         scanner.close();
     }
 
-    public static void rightForest(){
+    public static void rightForest() {
+        String choice = "";
+        Scanner scanner = new Scanner(System.in);
         System.out.println("You went into the forest, do you want to explore or go back?");
-        day = scanner.nextln();
+        choice = scanner.nextLine();
 
-        switch (day.toLowerCase()) {
-            case 'explore':
+        switch (choice.toLowerCase()) {
+            case "explore":
                 System.out.println("You went into the forest");
                 break;
-            case 'go back':
+            case "go back":
                 System.out.println("You end your adventure here\n");
                 break;
         }
@@ -110,21 +118,21 @@ public class Input {
         scanner.close();
     }
 
-    public static void straightDitch(){
+    public static void straightDitch() {
+        String choice = "";
+        Scanner scanner = new Scanner(System.in);
         System.out.println("You fly over the ditch, do you continue or go back?");
-        day = scanner.nextln();
+        choice = scanner.nextLine();
 
-        switch (day.toLowerCase()) {
-            case 'continue':
+        switch (choice.toLowerCase()) {
+            case "continue":
                 System.out.println("You went inside and you saw a light");
                 break;
-            case 'go back':
+            case "go back":
                 System.out.println("You end your adventure here\n");
         }
 
         scanner.close();
     }
 
-
-    
 }
